@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Platamp" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Platamp" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Platamp" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="C:/SFML-2.3.2/include" />
+		</Compiler>
+		<Linker>
+			<Add library="C:/SFML-2.3.2/lib/libsfml-system.a" />
+			<Add library="C:/SFML-2.3.2/lib/libsfml-window.a" />
+			<Add library="C:/SFML-2.3.2/lib/libsfml-graphics.a" />
+			<Add library="C:/SFML-2.3.2/lib/libsfml-audio.a" />
+			<Add library="C:/SFML-2.3.2/lib/libsfml-network.a" />
+			<Add directory="C:/SFML-2.3.2/lib" />
+		</Linker>
+		<Unit filename="Buttons.cpp" />
+		<Unit filename="Buttons.h" />
+		<Unit filename="Tiles/box.png" />
+		<Unit filename="Tiles/boxAlt.png" />
+		<Unit filename="Tiles/boxCoin.png" />
+		<Unit filename="Tiles/boxCoinAlt.png" />
+		<Unit filename="Tiles/boxCoinAlt_disabled.png" />
+		<Unit filename="Tiles/boxCoin_disabled.png" />
+		<Unit filename="Tiles/boxEmpty.png" />
+		<Unit filename="Tiles/boxExplosive.png" />
+		<Unit filename="Tiles/boxExplosiveAlt.png" />
+		<Unit filename="Tiles/boxExplosive_disabled.png" />
+		<Unit filename="Tiles/boxItem.png" />
+		<Unit filename="Tiles/boxItemAlt.png" />
+		<Unit filename="Tiles/boxItemAlt_disabled.png" />
+		<Unit filename="Tiles/boxItem_disabled.png" />
+		<Unit filename="Tiles/boxWarning.png" />
+		<Unit filename="Tiles/brickWall.png" />
+		<Unit filename="Tiles/bridge.png" />
+		<Unit filename="Tiles/bridgeLogs.png" />
+		<Unit filename="Tiles/bush.png" />
+		<Unit filename="Tiles/castle.png" />
+		<Unit filename="Tiles/castleCenter.png" />
+		<Unit filename="Tiles/castleCenter_rounded.png" />
+		<Unit filename="Tiles/castleCliffLeft.png" />
+		<Unit filename="Tiles/castleCliffLeftAlt.png" />
+		<Unit filename="Tiles/castleCliffRight.png" />
+		<Unit filename="Tiles/castleCliffRightAlt.png" />
+		<Unit filename="Tiles/castleHalf.png" />
+		<Unit filename="Tiles/castleHalfLeft.png" />
+		<Unit filename="Tiles/castleHalfMid.png" />
+		<Unit filename="Tiles/castleHalfRight.png" />
+		<Unit filename="Tiles/castleHillLeft.png" />
+		<Unit filename="Tiles/castleHillLeft2.png" />
+		<Unit filename="Tiles/castleHillRight.png" />
+		<Unit filename="Tiles/castleHillRight2.png" />
+		<Unit filename="Tiles/castleLedgeLeft.png" />
+		<Unit filename="Tiles/castleLedgeRight.png" />
+		<Unit filename="Tiles/castleLeft.png" />
+		<Unit filename="Tiles/castleMid.png" />
+		<Unit filename="Tiles/castleRight.png" />
+		<Unit filename="Tiles/cloud1.png" />
+		<Unit filename="Tiles/cloud2.png" />
+		<Unit filename="Tiles/cloud3.png" />
+		<Unit filename="Tiles/dirt.png" />
+		<Unit filename="Tiles/dirtCenter.png" />
+		<Unit filename="Tiles/dirtCenter_rounded.png" />
+		<Unit filename="Tiles/dirtCliffLeft.png" />
+		<Unit filename="Tiles/dirtCliffLeftAlt.png" />
+		<Unit filename="Tiles/dirtCliffRight.png" />
+		<Unit filename="Tiles/dirtCliffRightAlt.png" />
+		<Unit filename="Tiles/dirtHalf.png" />
+		<Unit filename="Tiles/dirtHalfLeft.png" />
+		<Unit filename="Tiles/dirtHalfMid.png" />
+		<Unit filename="Tiles/dirtHalfRight.png" />
+		<Unit filename="Tiles/dirtHillLeft.png" />
+		<Unit filename="Tiles/dirtHillLeft2.png" />
+		<Unit filename="Tiles/dirtHillRight.png" />
+		<Unit filename="Tiles/dirtHillRight2.png" />
+		<Unit filename="Tiles/dirtLedgeLeft.png" />
+		<Unit filename="Tiles/dirtLedgeRight.png" />
+		<Unit filename="Tiles/dirtLeft.png" />
+		<Unit filename="Tiles/dirtMid.png" />
+		<Unit filename="Tiles/dirtRight.png" />
+		<Unit filename="Tiles/door_closedMid.png" />
+		<Unit filename="Tiles/door_closedTop.png" />
+		<Unit filename="Tiles/door_openMid.png" />
+		<Unit filename="Tiles/door_openTop.png" />
+		<Unit filename="Tiles/fence.png" />
+		<Unit filename="Tiles/fenceBroken.png" />
+		<Unit filename="Tiles/grass.png" />
+		<Unit filename="Tiles/grassCenter.png" />
+		<Unit filename="Tiles/grassCenter_rounded.png" />
+		<Unit filename="Tiles/grassCliffLeft.png" />
+		<Unit filename="Tiles/grassCliffLeftAlt.png" />
+		<Unit filename="Tiles/grassCliffRight.png" />
+		<Unit filename="Tiles/grassCliffRightAlt.png" />
+		<Unit filename="Tiles/grassHalf.png" />
+		<Unit filename="Tiles/grassHalfLeft.png" />
+		<Unit filename="Tiles/grassHalfMid.png" />
+		<Unit filename="Tiles/grassHalfRight.png" />
+		<Unit filename="Tiles/grassHillLeft.png" />
+		<Unit filename="Tiles/grassHillLeft2.png" />
+		<Unit filename="Tiles/grassHillRight.png" />
+		<Unit filename="Tiles/grassHillRight2.png" />
+		<Unit filename="Tiles/grassLedgeLeft.png" />
+		<Unit filename="Tiles/grassLedgeRight.png" />
+		<Unit filename="Tiles/grassLeft.png" />
+		<Unit filename="Tiles/grassMid.png" />
+		<Unit filename="Tiles/grassRight.png" />
+		<Unit filename="Tiles/hill_large.png" />
+		<Unit filename="Tiles/hill_largeAlt.png" />
+		<Unit filename="Tiles/hill_small.png" />
+		<Unit filename="Tiles/hill_smallAlt.png" />
+		<Unit filename="Tiles/ladder_mid.png" />
+		<Unit filename="Tiles/ladder_top.png" />
+		<Unit filename="Tiles/liquidLava.png" />
+		<Unit filename="Tiles/liquidLavaTop.png" />
+		<Unit filename="Tiles/liquidLavaTop_mid.png" />
+		<Unit filename="Tiles/liquidWater.png" />
+		<Unit filename="Tiles/liquidWaterTop.png" />
+		<Unit filename="Tiles/liquidWaterTop_mid.png" />
+		<Unit filename="Tiles/lock_blue.png" />
+		<Unit filename="Tiles/lock_green.png" />
+		<Unit filename="Tiles/lock_red.png" />
+		<Unit filename="Tiles/lock_yellow.png" />
+		<Unit filename="Tiles/plank.png" />
+		<Unit filename="Tiles/rockHillLeft.png" />
+		<Unit filename="Tiles/rockHillRight.png" />
+		<Unit filename="Tiles/ropeAttached.png" />
+		<Unit filename="Tiles/ropeHorizontal.png" />
+		<Unit filename="Tiles/ropeVertical.png" />
+		<Unit filename="Tiles/sand.png" />
+		<Unit filename="Tiles/sandCenter.png" />
+		<Unit filename="Tiles/sandCenter_rounded.png" />
+		<Unit filename="Tiles/sandCliffLeft.png" />
+		<Unit filename="Tiles/sandCliffLeftAlt.png" />
+		<Unit filename="Tiles/sandCliffRight.png" />
+		<Unit filename="Tiles/sandCliffRightAlt.png" />
+		<Unit filename="Tiles/sandHalf.png" />
+		<Unit filename="Tiles/sandHalfLeft.png" />
+		<Unit filename="Tiles/sandHalfMid.png" />
+		<Unit filename="Tiles/sandHalfRight.png" />
+		<Unit filename="Tiles/sandHillLeft.png" />
+		<Unit filename="Tiles/sandHillLeft2.png" />
+		<Unit filename="Tiles/sandHillRight.png" />
+		<Unit filename="Tiles/sandHillRight2.png" />
+		<Unit filename="Tiles/sandLedgeLeft.png" />
+		<Unit filename="Tiles/sandLedgeRight.png" />
+		<Unit filename="Tiles/sandLeft.png" />
+		<Unit filename="Tiles/sandMid.png" />
+		<Unit filename="Tiles/sandRight.png" />
+		<Unit filename="Tiles/sign.png" />
+		<Unit filename="Tiles/signExit.png" />
+		<Unit filename="Tiles/signLeft.png" />
+		<Unit filename="Tiles/signRight.png" />
+		<Unit filename="Tiles/snow.png" />
+		<Unit filename="Tiles/snowCenter.png" />
+		<Unit filename="Tiles/snowCenter_rounded.png" />
+		<Unit filename="Tiles/snowCliffLeft.png" />
+		<Unit filename="Tiles/snowCliffLeftAlt.png" />
+		<Unit filename="Tiles/snowCliffRight.png" />
+		<Unit filename="Tiles/snowCliffRightAlt.png" />
+		<Unit filename="Tiles/snowHalf.png" />
+		<Unit filename="Tiles/snowHalfLeft.png" />
+		<Unit filename="Tiles/snowHalfMid.png" />
+		<Unit filename="Tiles/snowHalfRight.png" />
+		<Unit filename="Tiles/snowHillLeft.png" />
+		<Unit filename="Tiles/snowHillLeft2.png" />
+		<Unit filename="Tiles/snowHillRight.png" />
+		<Unit filename="Tiles/snowHillRight2.png" />
+		<Unit filename="Tiles/snowLedgeLeft.png" />
+		<Unit filename="Tiles/snowLedgeRight.png" />
+		<Unit filename="Tiles/snowLeft.png" />
+		<Unit filename="Tiles/snowMid.png" />
+		<Unit filename="Tiles/snowRight.png" />
+		<Unit filename="Tiles/stone.png" />
+		<Unit filename="Tiles/stoneCenter.png" />
+		<Unit filename="Tiles/stoneCenter_rounded.png" />
+		<Unit filename="Tiles/stoneCliffLeft.png" />
+		<Unit filename="Tiles/stoneCliffLeftAlt.png" />
+		<Unit filename="Tiles/stoneCliffRight.png" />
+		<Unit filename="Tiles/stoneCliffRightAlt.png" />
+		<Unit filename="Tiles/stoneHalf.png" />
+		<Unit filename="Tiles/stoneHalfLeft.png" />
+		<Unit filename="Tiles/stoneHalfMid.png" />
+		<Unit filename="Tiles/stoneHalfRight.png" />
+		<Unit filename="Tiles/stoneHillLeft2.png" />
+		<Unit filename="Tiles/stoneHillRight2.png" />
+		<Unit filename="Tiles/stoneLedgeLeft.png" />
+		<Unit filename="Tiles/stoneLedgeRight.png" />
+		<Unit filename="Tiles/stoneLeft.png" />
+		<Unit filename="Tiles/stoneMid.png" />
+		<Unit filename="Tiles/stoneRight.png" />
+		<Unit filename="Tiles/stoneWall.png" />
+		<Unit filename="Tiles/tiles_spritesheet.png" />
+		<Unit filename="Tiles/tiles_spritesheet.xml" />
+		<Unit filename="Tiles/tochLit.png" />
+		<Unit filename="Tiles/tochLit2.png" />
+		<Unit filename="Tiles/torch.png" />
+		<Unit filename="Tiles/window.png" />
+		<Unit filename="game.cpp" />
+		<Unit filename="game.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="mapping.cpp" />
+		<Unit filename="mapping.h" />
+		<Unit filename="menu.cpp" />
+		<Unit filename="menu.h" />
+		<Unit filename="src/Background.jpg" />
+		<Unit filename="src/Menu.png" />
+		<Unit filename="src/NPC2.png" />
+		<Unit filename="src/arial.ttf" />
+		<Unit filename="src/mapa1.csv" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
