@@ -2,13 +2,17 @@
 
 int width = 38; int height = 20;
 
+sf::Texture tPlayer;
+sf::Texture t103, t152, t68, t44, t40, t57, t45, t154, t32, t20;
+
 JANELAS game(sf::RenderWindow* window){
 
     window->setSize(sf::Vector2u(1000,600));
     window->setPosition(sf::Vector2i(100,100));
 
-    sf::Texture tPlayer;
-    sf::Texture t103, t152, t68, t44, t40, t57, t45, t154, t32, t20;
+    sf::View view(sf::Vector2f(500,469), sf::Vector2f(1000,700));
+
+
 
     if(!t152.loadFromFile("src\\Tiles\\grassCenter.png")){
         std::cout << "ERROR";
@@ -50,6 +54,8 @@ JANELAS game(sf::RenderWindow* window){
 
     coord = mapping(1);
 
+    sf::RectangleShape rect;
+
     while(window->isOpen()){
         sf::Event event;
         while(window->pollEvent(event)){
@@ -64,28 +70,43 @@ JANELAS game(sf::RenderWindow* window){
             }
         }
 
-        window->clear();
+        window->setView(view);
+        window->clear(sf::Color::White);
 
         printMap(coord, window);
 
         window->display();
 
     }
-
+    //window->setView();
     delete coord;
     return MENU;
 }
 
-void printMap(std::string** input, sf::RenderWindow window){
+void printMap(std::string** _input, sf::RenderWindow* window){
+    sf::RectangleShape _rect;
+    _rect.setSize(sf::Vector2f(70,70));
 
-    for(x = 0; x<width; x++){
-        for(y = 0; y<height; y++){
-            if(coord[x][y] == ""){
-
+    for(int x = 0; x<width; x++){
+        for(int y = 0; y<height; y++){
+            if(*(*(_input + x) + y) == "103"){
+                _rect.setPosition(sf::Vector2f(x*70, y*70));
+                _rect.setTexture(&t103,false);
+                _rect.setFillColor(sf::Color::White);
+                window->draw(_rect);
             }
-
-
-
+            else if(*(*(_input + x) + y) == "152"){
+                _rect.setPosition(sf::Vector2f(x*70, y*70));
+                _rect.setTexture(&t152,false);
+                _rect.setFillColor(sf::Color::White);
+                window->draw(_rect);
+            }
+            else if(*(*(_input + x) + y) == "-1"){
+                _rect.setPosition(sf::Vector2f(x*70, y*70));
+                _rect.setTexture(NULL);
+                _rect.setFillColor(sf::Color::Blue);
+                window->draw(_rect);
+            }
         }
     }
 
