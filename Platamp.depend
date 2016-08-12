@@ -394,10 +394,10 @@
 1470291945 c:\users\gustavo alves\desktop\c++\projetos\platamp1\menu.h
 	"Buttons.h"
 
-1470989658 source:c:\users\gustavo alves\desktop\c++\projetos\platamp1\mapping.cpp
+1470999552 source:c:\users\gustavo alves\desktop\c++\projetos\platamp1\mapping.cpp
 	"mapping.h"
 
-1470989658 c:\users\gustavo alves\desktop\c++\projetos\platamp1\mapping.h
+1470999552 c:\users\gustavo alves\desktop\c++\projetos\platamp1\mapping.h
 	<fstream>
 	<string>
 	<sstream>
@@ -407,10 +407,10 @@
 1470440921 source:c:\users\gustavo alves\desktop\c++\projetos\platamp1\menu.cpp
 	"menu.h"
 
-1470995307 source:c:\users\gustavo alves\desktop\c++\projetos\platamp1\game.cpp
+1470999552 source:c:\users\gustavo alves\desktop\c++\projetos\platamp1\game.cpp
 	"game.h"
 
-1470989844 c:\users\gustavo alves\desktop\c++\projetos\platamp1\game.h
+1470999552 c:\users\gustavo alves\desktop\c++\projetos\platamp1\game.h
 	"Buttons.h"
 	"mapping.h"
 	"string"
