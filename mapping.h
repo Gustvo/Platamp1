@@ -5,8 +5,9 @@
 #include <string>
 #include <sstream>
 #include <iostream>
+#include <string>
 
-std::string** mapping();
+std::string** mapping(int);
 
 
 #endif // MAPPING_H_INCLUDED

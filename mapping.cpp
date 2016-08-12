@@ -1,7 +1,7 @@
 #include "mapping.h"
 
 
-std::string** mapping(){
+std::string** mapping(int mapa){
     std::string myString;
 
     const int width = 38;
@@ -11,7 +11,7 @@ std::string** mapping(){
         coord[i] = new std::string[height];
 
 
-    std::ifstream inFile("mapa2.csv");
+    std::ifstream inFile("src\\mapa1.csv");
     if(inFile.is_open()){
         int counter = 0;
         while(getline(inFile, myString, '\n')){
