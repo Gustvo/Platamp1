@@ -102,11 +102,21 @@ void printMap(std::string** _input, sf::RenderWindow* window){
             }
             else if(*(*(_input + x) + y) == "103"){
                 _rect.setPosition(sf::Vector2f(x*70, y*70));
+                _rect.setTexture(NULL);
+                _rect.setFillColor(sf::Color::Blue);
+                window->draw(_rect);
+
+                _rect.setPosition(sf::Vector2f(x*70, y*70));
                 _rect.setTexture(&t103,false);
                 _rect.setFillColor(sf::Color::White);
                 window->draw(_rect);
             }
             else if(*(*(_input + x) + y) == "152"){
+                _rect.setPosition(sf::Vector2f(x*70, y*70));
+                _rect.setTexture(NULL);
+                _rect.setFillColor(sf::Color::Blue);
+                window->draw(_rect);
+
                 _rect.setPosition(sf::Vector2f(x*70, y*70));
                 _rect.setTexture(&t152,false);
                 _rect.setFillColor(sf::Color::White);
@@ -114,11 +124,21 @@ void printMap(std::string** _input, sf::RenderWindow* window){
             }
             else if(*(*(_input + x) + y) == "68"){
                 _rect.setPosition(sf::Vector2f(x*70, y*70));
+                _rect.setTexture(NULL);
+                _rect.setFillColor(sf::Color::Blue);
+                window->draw(_rect);
+
+                _rect.setPosition(sf::Vector2f(x*70, y*70));
                 _rect.setTexture(&t68,false);
                 _rect.setFillColor(sf::Color::White);
                 window->draw(_rect);
             }
             else if(*(*(_input + x) + y) == "44"){
+                _rect.setPosition(sf::Vector2f(x*70, y*70));
+                _rect.setTexture(NULL);
+                _rect.setFillColor(sf::Color::Blue);
+                window->draw(_rect);
+
                 _rect.setPosition(sf::Vector2f(x*70, y*70));
                 _rect.setTexture(&t44,false);
                 _rect.setFillColor(sf::Color::White);
@@ -126,11 +146,21 @@ void printMap(std::string** _input, sf::RenderWindow* window){
             }
             else if(*(*(_input + x) + y) == "40"){
                 _rect.setPosition(sf::Vector2f(x*70, y*70));
+                _rect.setTexture(NULL);
+                _rect.setFillColor(sf::Color::Blue);
+                window->draw(_rect);
+
+                _rect.setPosition(sf::Vector2f(x*70, y*70));
                 _rect.setTexture(&t40,false);
                 _rect.setFillColor(sf::Color::White);
                 window->draw(_rect);
             }
             else if(*(*(_input + x) + y) == "57"){
+                _rect.setPosition(sf::Vector2f(x*70, y*70));
+                _rect.setTexture(NULL);
+                _rect.setFillColor(sf::Color::Blue);
+                window->draw(_rect);
+
                 _rect.setPosition(sf::Vector2f(x*70, y*70));
                 _rect.setTexture(&t57,false);
                 _rect.setFillColor(sf::Color::White);
@@ -138,11 +168,21 @@ void printMap(std::string** _input, sf::RenderWindow* window){
             }
             else if(*(*(_input + x) + y) == "45"){
                 _rect.setPosition(sf::Vector2f(x*70, y*70));
+                _rect.setTexture(NULL);
+                _rect.setFillColor(sf::Color::Blue);
+                window->draw(_rect);
+
+                _rect.setPosition(sf::Vector2f(x*70, y*70));
                 _rect.setTexture(&t45,false);
                 _rect.setFillColor(sf::Color::White);
                 window->draw(_rect);
             }
             else if(*(*(_input + x) + y) == "154"){
+                _rect.setPosition(sf::Vector2f(x*70, y*70));
+                _rect.setTexture(NULL);
+                _rect.setFillColor(sf::Color::Blue);
+                window->draw(_rect);
+
                 _rect.setPosition(sf::Vector2f(x*70, y*70));
                 _rect.setTexture(&t154,false);
                 _rect.setFillColor(sf::Color::White);
@@ -150,11 +190,21 @@ void printMap(std::string** _input, sf::RenderWindow* window){
             }
             else if(*(*(_input + x) + y) == "32"){
                 _rect.setPosition(sf::Vector2f(x*70, y*70));
+                _rect.setTexture(NULL);
+                _rect.setFillColor(sf::Color::Blue);
+                window->draw(_rect);
+
+                _rect.setPosition(sf::Vector2f(x*70, y*70));
                 _rect.setTexture(&t32,false);
                 _rect.setFillColor(sf::Color::White);
                 window->draw(_rect);
             }
             else if(*(*(_input + x) + y) == "20"){
+                _rect.setPosition(sf::Vector2f(x*70, y*70));
+                _rect.setTexture(NULL);
+                _rect.setFillColor(sf::Color::Blue);
+                window->draw(_rect);
+
                 _rect.setPosition(sf::Vector2f(x*70, y*70));
                 _rect.setTexture(&t20,false);
                 _rect.setFillColor(sf::Color::White);
