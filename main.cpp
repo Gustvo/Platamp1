@@ -1,5 +1,6 @@
 #include "Buttons.h"
 #include "menu.h"
+#include "game.h"
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
@@ -42,6 +43,7 @@ int main(){
         window.clear(sf::Color::Black);
 
         if(janela == MENU){
+            window.setSize(sf::Vector2u(wWidth,wHeight));
             janela = menu(&window);
         }
         else if(janela == SAVE){
@@ -51,7 +53,7 @@ int main(){
 
         }
         else if(janela == GAME){
-
+            janela = game(&window);
         }
         else if(janela == ERROR){
             std::cout << "ERROR";
