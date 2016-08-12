@@ -1,12 +1,15 @@
 #include "game.h"
 
 int width = 38; int height = 20;
-
+int spriteWidth;
+int spriteHeight;
 sf::Texture tPlayer;
 sf::Texture t103, t152, t68, t44, t40, t57, t45, t154, t32, t20;
 
 JANELAS game(sf::RenderWindow* window){
 
+    spriteHeight = 70;
+    spriteWidth = spriteHeight;
     //window->setSize(sf::Vector2u(1000,600));
     //window->setPosition(sf::Vector2i(100,100));
 
@@ -95,10 +98,7 @@ void printMap(std::string** _input, sf::RenderWindow* window){
     for(int x = 0; x<width; x++){
         for(int y = 0; y<height; y++){
             if(*(*(_input + x) + y) == "-1"){
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(NULL);
-                _rect.setFillColor(sf::Color::Blue);
-                window->draw(_rect);
+                drawRect(sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "103"){
                 _rect.setPosition(sf::Vector2f(x*70, y*70));
@@ -213,4 +213,28 @@ void printMap(std::string** _input, sf::RenderWindow* window){
         }
     }
 
+}
+
+void drawRect(sf::Texture* _texture, sf::Vector2f _coord, sf::RenderWindow* _window){
+
+    sf::RectangleShape _rect;
+    _rect.setSize(sf::Vector2f(spriteWidth,spriteHeight));
+
+    _rect.setPosition(_coord.x * spriteWidth, _coord.y * spriteHeight);
+    _rect.setTexture(NULL);
+    _rect.setFillColor(sf::Color::Blue);
+    _window->draw(_rect);
+
+    _rect.setTexture(_texture);
+    _rect.setFillColor(sf::Color::White);
+    _window->draw(_rect);
+}
+void drawRect(sf::Vector2f _coord, sf::RenderWindow* _window){
+    sf::RectangleShape _rect;
+    _rect.setSize(sf::Vector2f(spriteWidth,spriteHeight));
+
+    _rect.setPosition(_coord.x * spriteWidth, _coord.y * spriteHeight);
+    _rect.setTexture(NULL);
+    _rect.setFillColor(sf::Color::Blue);
+    _window->draw(_rect);
 }
