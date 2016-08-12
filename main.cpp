@@ -7,7 +7,7 @@
 #include <string>
 
 ///Configuração da Janela
-int wWidth = 600; //Largura da Janela em pixels
+int wWidth = 1000; //Largura da Janela em pixels
 int wHeight = 600;  //Altura da Janela em pixels
 std::string wName = "Minha Janela"; //Título da Janela
 
@@ -44,6 +44,7 @@ int main(){
 
         if(janela == MENU){
             window.setSize(sf::Vector2u(wWidth,wHeight));
+            window.setView(window.getDefaultView());
             janela = menu(&window);
         }
         else if(janela == SAVE){
