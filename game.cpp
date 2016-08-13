@@ -1,7 +1,11 @@
 #include "game.h"
 
+
+///map size variables?
 int width = 38; int height = 20;
 
+
+///Textures
 sf::Texture tPlayer;
 sf::Texture t103, t152, t68, t44, t40, t57, t45, t154, t32, t20;
 
@@ -11,7 +15,7 @@ JANELAS game(sf::RenderWindow* window){
     //window->setSize(sf::Vector2u(1000,600));
     //window->setPosition(sf::Vector2i(100,100));
 
-    sf::View view(sf::Vector2f(500,469), sf::Vector2f(1000,700));
+    sf::View view(sf::Vector2f(500,469), sf::Vector2f(1000,770));
 
 
     ///Load Textures
@@ -57,6 +61,7 @@ JANELAS game(sf::RenderWindow* window){
     for(int i = 0; i < width; ++i)
         coord[i] = new std::string[height];
 
+    //Loads map(level) code to coord
     coord = mapping(1);
 
     while(window->isOpen()){
@@ -76,6 +81,9 @@ JANELAS game(sf::RenderWindow* window){
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)){
             view.move(sf::Vector2f(3,0));
         }
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)){
+            view.move(sf::Vector2f(-3,0));
+        }
 
         window->setView(view);
         window->clear(sf::Color::White);
@@ -90,68 +98,44 @@ JANELAS game(sf::RenderWindow* window){
 }
 
 void printMap(std::string** _input, sf::RenderWindow* window){
-    sf::RectangleShape _rect;
-    _rect.setSize(sf::Vector2f(70,70));
 
+    //Iterate by each coordinate checking the code in each cell
+    //code goes from 1 to 156 - defined by sprite sheet
     for(int x = 0; x<width; x++){
         for(int y = 0; y<height; y++){
             if(*(*(_input + x) + y) == "-1"){
-                drawRect(sf::Vector2f(x,y), window);
+                drawSprite(sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "103"){
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(NULL);
-                _rect.setFillColor(sf::Color::Blue);
-                window->draw(_rect);
-
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(&t103,false);
-                _rect.setFillColor(sf::Color::White);
-                window->draw(_rect);
+                drawSprite(&t103, sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "152"){
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(NULL);
-                _rect.setFillColor(sf::Color::Blue);
-                window->draw(_rect);
-
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(&t152,false);
-                _rect.setFillColor(sf::Color::White);
-                window->draw(_rect);
+                drawSprite(&t152, sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "68"){
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(NULL);
-                _rect.setFillColor(sf::Color::Blue);
-                window->draw(_rect);
-
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(&t68,false);
-                _rect.setFillColor(sf::Color::White);
-                window->draw(_rect);
+                drawSprite(&t68, sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "44"){
-                drawRect(&t44, sf::Vector2f(x,y), window);
+                drawSprite(&t44, sf::Vector2f(x,y), window);
             }
 
             else if(*(*(_input + x) + y) == "40"){
-                drawRect(&t40, sf::Vector2f(x,y), window);
+                drawSprite(&t40, sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "57"){
-                drawRect(&t57, sf::Vector2f(x,y), window);
+                drawSprite(&t57, sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "45"){
-                drawRect(&t45, sf::Vector2f(x,y), window);
+                drawSprite(&t45, sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "154"){
-                drawRect(&t154, sf::Vector2f(x,y), window);
+                drawSprite(&t154, sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "32"){
-                drawRect(&t32, sf::Vector2f(x,y), window);
+                drawSprite(&t32, sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "20"){
-                drawRect(&t20, sf::Vector2f(x,y), window);
+                drawSprite(&t20, sf::Vector2f(x,y), window);
             }
         }
     }

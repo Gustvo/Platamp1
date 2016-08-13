@@ -10,7 +10,7 @@
 
 std::string** mapping(int);
 
-void drawRect(sf::Texture* _texture, sf::Vector2f _coord, sf::RenderWindow* _window);
-void drawRect(sf::Vector2f _coord, sf::RenderWindow* _window);
+void drawSprite(sf::Texture* _texture, sf::Vector2f _coord, sf::RenderWindow* _window);
+void drawSprite(sf::Vector2f _coord, sf::RenderWindow* _window);
 
 #endif // MAPPING_H_INCLUDED
