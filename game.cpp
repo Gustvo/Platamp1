@@ -15,7 +15,7 @@ JANELAS game(sf::RenderWindow* window){
     //window->setSize(sf::Vector2u(1000,600));
     //window->setPosition(sf::Vector2i(100,100));
 
-    sf::View view(sf::Vector2f(500,469), sf::Vector2f(1000,700));
+    sf::View view(sf::Vector2f(500,469), sf::Vector2f(1000,770));
 
 
     ///Load Textures
@@ -81,6 +81,9 @@ JANELAS game(sf::RenderWindow* window){
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)){
             view.move(sf::Vector2f(3,0));
         }
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)){
+            view.move(sf::Vector2f(-3,0));
+        }
 
         window->setView(view);
         window->clear(sf::Color::White);
@@ -95,44 +98,44 @@ JANELAS game(sf::RenderWindow* window){
 }
 
 void printMap(std::string** _input, sf::RenderWindow* window){
-    sf::RectangleShape _rect;
-    _rect.setSize(sf::Vector2f(70,70));
 
+    //Iterate by each coordinate checking the code in each cell
+    //code goes from 1 to 156 - defined by sprite sheet
     for(int x = 0; x<width; x++){
         for(int y = 0; y<height; y++){
             if(*(*(_input + x) + y) == "-1"){
-                drawRect(sf::Vector2f(x,y), window);
+                drawSprite(sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "103"){
-                drawRect(&t103, sf::Vector2f(x,y), window);
+                drawSprite(&t103, sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "152"){
-                drawRect(&t152, sf::Vector2f(x,y), window);
+                drawSprite(&t152, sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "68"){
-                drawRect(&t68, sf::Vector2f(x,y), window);
+                drawSprite(&t68, sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "44"){
-                drawRect(&t44, sf::Vector2f(x,y), window);
+                drawSprite(&t44, sf::Vector2f(x,y), window);
             }
 
             else if(*(*(_input + x) + y) == "40"){
-                drawRect(&t40, sf::Vector2f(x,y), window);
+                drawSprite(&t40, sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "57"){
-                drawRect(&t57, sf::Vector2f(x,y), window);
+                drawSprite(&t57, sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "45"){
-                drawRect(&t45, sf::Vector2f(x,y), window);
+                drawSprite(&t45, sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "154"){
-                drawRect(&t154, sf::Vector2f(x,y), window);
+                drawSprite(&t154, sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "32"){
-                drawRect(&t32, sf::Vector2f(x,y), window);
+                drawSprite(&t32, sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "20"){
-                drawRect(&t20, sf::Vector2f(x,y), window);
+                drawSprite(&t20, sf::Vector2f(x,y), window);
             }
         }
     }
