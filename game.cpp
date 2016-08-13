@@ -1,15 +1,13 @@
 #include "game.h"
 
 int width = 38; int height = 20;
-int spriteWidth;
-int spriteHeight;
+
 sf::Texture tPlayer;
 sf::Texture t103, t152, t68, t44, t40, t57, t45, t154, t32, t20;
 
 JANELAS game(sf::RenderWindow* window){
 
-    spriteHeight = 70;
-    spriteWidth = spriteHeight;
+
     //window->setSize(sf::Vector2u(1000,600));
     //window->setPosition(sf::Vector2i(100,100));
 
@@ -134,107 +132,27 @@ void printMap(std::string** _input, sf::RenderWindow* window){
                 window->draw(_rect);
             }
             else if(*(*(_input + x) + y) == "44"){
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(NULL);
-                _rect.setFillColor(sf::Color::Blue);
-                window->draw(_rect);
-
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(&t44,false);
-                _rect.setFillColor(sf::Color::White);
-                window->draw(_rect);
+                drawRect(&t44, sf::Vector2f(x,y), window);
             }
-            else if(*(*(_input + x) + y) == "40"){
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(NULL);
-                _rect.setFillColor(sf::Color::Blue);
-                window->draw(_rect);
 
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(&t40,false);
-                _rect.setFillColor(sf::Color::White);
-                window->draw(_rect);
+            else if(*(*(_input + x) + y) == "40"){
+                drawRect(&t40, sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "57"){
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(NULL);
-                _rect.setFillColor(sf::Color::Blue);
-                window->draw(_rect);
-
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(&t57,false);
-                _rect.setFillColor(sf::Color::White);
-                window->draw(_rect);
+                drawRect(&t57, sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "45"){
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(NULL);
-                _rect.setFillColor(sf::Color::Blue);
-                window->draw(_rect);
-
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(&t45,false);
-                _rect.setFillColor(sf::Color::White);
-                window->draw(_rect);
+                drawRect(&t45, sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "154"){
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(NULL);
-                _rect.setFillColor(sf::Color::Blue);
-                window->draw(_rect);
-
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(&t154,false);
-                _rect.setFillColor(sf::Color::White);
-                window->draw(_rect);
+                drawRect(&t154, sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "32"){
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(NULL);
-                _rect.setFillColor(sf::Color::Blue);
-                window->draw(_rect);
-
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(&t32,false);
-                _rect.setFillColor(sf::Color::White);
-                window->draw(_rect);
+                drawRect(&t32, sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "20"){
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(NULL);
-                _rect.setFillColor(sf::Color::Blue);
-                window->draw(_rect);
-
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(&t20,false);
-                _rect.setFillColor(sf::Color::White);
-                window->draw(_rect);
+                drawRect(&t20, sf::Vector2f(x,y), window);
             }
         }
     }
-
-}
-
-void drawRect(sf::Texture* _texture, sf::Vector2f _coord, sf::RenderWindow* _window){
-
-    sf::RectangleShape _rect;
-    _rect.setSize(sf::Vector2f(spriteWidth,spriteHeight));
-
-    _rect.setPosition(_coord.x * spriteWidth, _coord.y * spriteHeight);
-    _rect.setTexture(NULL);
-    _rect.setFillColor(sf::Color::Blue);
-    _window->draw(_rect);
-
-    _rect.setTexture(_texture);
-    _rect.setFillColor(sf::Color::White);
-    _window->draw(_rect);
-}
-void drawRect(sf::Vector2f _coord, sf::RenderWindow* _window){
-    sf::RectangleShape _rect;
-    _rect.setSize(sf::Vector2f(spriteWidth,spriteHeight));
-
-    _rect.setPosition(_coord.x * spriteWidth, _coord.y * spriteHeight);
-    _rect.setTexture(NULL);
-    _rect.setFillColor(sf::Color::Blue);
-    _window->draw(_rect);
 }

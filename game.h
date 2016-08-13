@@ -10,7 +10,6 @@
 JANELAS game(sf::RenderWindow* window);
 
 void printMap(std::string** _in, sf::RenderWindow* _window);
-void drawRect(sf::Texture* _texture, sf::Vector2f _coord, sf::RenderWindow* _window);
-void drawRect(sf::Vector2f _coord, sf::RenderWindow* _window);
+
 
 #endif // GAME_H_INCLUDED
