@@ -1,7 +1,11 @@
 #include "game.h"
 
+
+///map size variables?
 int width = 38; int height = 20;
 
+
+///Textures
 sf::Texture tPlayer;
 sf::Texture t103, t152, t68, t44, t40, t57, t45, t154, t32, t20;
 
@@ -57,6 +61,7 @@ JANELAS game(sf::RenderWindow* window){
     for(int i = 0; i < width; ++i)
         coord[i] = new std::string[height];
 
+    //Loads map(level) code to coord
     coord = mapping(1);
 
     while(window->isOpen()){
@@ -99,37 +104,13 @@ void printMap(std::string** _input, sf::RenderWindow* window){
                 drawRect(sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "103"){
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(NULL);
-                _rect.setFillColor(sf::Color::Blue);
-                window->draw(_rect);
-
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(&t103,false);
-                _rect.setFillColor(sf::Color::White);
-                window->draw(_rect);
+                drawRect(&t103, sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "152"){
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(NULL);
-                _rect.setFillColor(sf::Color::Blue);
-                window->draw(_rect);
-
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(&t152,false);
-                _rect.setFillColor(sf::Color::White);
-                window->draw(_rect);
+                drawRect(&t152, sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "68"){
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(NULL);
-                _rect.setFillColor(sf::Color::Blue);
-                window->draw(_rect);
-
-                _rect.setPosition(sf::Vector2f(x*70, y*70));
-                _rect.setTexture(&t68,false);
-                _rect.setFillColor(sf::Color::White);
-                window->draw(_rect);
+                drawRect(&t68, sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "44"){
                 drawRect(&t44, sf::Vector2f(x,y), window);
