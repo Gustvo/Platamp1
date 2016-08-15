@@ -28,7 +28,7 @@ std::string** mapping(int mapa){
                 std::cout << mapWidth << " " << mapHeight;
                 //break;
                 y++;
-            }
+        }
         while(getline(inFile, myString, '\n')){
 
             std::stringstream stream(myString);

@@ -1,12 +1,11 @@
 #include "game.h"
-
-
+#include "player.h"
 ///map size variables?
 int width = 38; int height = 20;
 
 
 ///Textures
-sf::Texture tPlayer;
+
 sf::Texture t103, t152, t68, t44, t40, t57, t45, t154, t32, t20;
 
 JANELAS game(sf::RenderWindow* window){
@@ -19,7 +18,8 @@ JANELAS game(sf::RenderWindow* window){
 
 
     ///Load Textures
-    //Tiles textures
+
+    {//Tiles textures
     if(!t152.loadFromFile("src\\Tiles\\grassCenter.png")){
         std::cout << "ERROR";
     }
@@ -50,10 +50,6 @@ JANELAS game(sf::RenderWindow* window){
     if(!t103.loadFromFile("src\\Tiles\\grassMid.png")){
         std::cout << "ERROR";
     }
-
-    //player texture
-    if(!tPlayer.loadFromFile("src\\NPC2.png")){
-        std::cout << "ERROR";
     }
 
     ///This creates a array to hold the coordinates of the level, together with the tile IDs
@@ -63,6 +59,9 @@ JANELAS game(sf::RenderWindow* window){
 
     //Loads map(level) code to coord
     coord = mapping(1);
+
+    Player player1;
+
 
     while(window->isOpen()){
         sf::Event event;
@@ -79,16 +78,22 @@ JANELAS game(sf::RenderWindow* window){
         }
 
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)){
-            view.move(sf::Vector2f(3,0));
+            if(player1.getPosition().x > 400)
+                view.setCenter(player1.getPosition().x + 100, view.getCenter().y);
+            player1.move(RIGHT);
         }
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)){
-            view.move(sf::Vector2f(-3,0));
+            if(player1.getPosition().x > 400)
+                view.setCenter(player1.getPosition().x + 100, view.getCenter().y);
+            player1.move(LEFT);
         }
 
         window->setView(view);
         window->clear(sf::Color::White);
 
         printMap(coord, window);
+        player1.draw(window);
+
 
         window->display();
 
