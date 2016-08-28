@@ -9,7 +9,7 @@
 ///Configuração da Janela
 int wWidth = 1000; //Largura da Janela em pixels
 int wHeight = 600;  //Altura da Janela em pixels
-std::string wName = "Minha Janela"; //Título da Janela
+std::string wName = "Platamp"; //Título da Janela
 
 ///Criando texturas
 const int nMenu_Texture = 2;//quantidade de texturas no MENU
@@ -21,7 +21,7 @@ int main(){
 
     JANELAS janela = MENU;
     sf::RenderWindow window(sf::VideoMode(wWidth,wHeight), wName, sf::Style::Close);
-    window.setFramerateLimit(60);
+    window.setFramerateLimit(120);
 
     while(window.isOpen()){
         sf::Event event;
@@ -43,7 +43,7 @@ int main(){
         window.clear(sf::Color::Black);
 
         if(janela == MENU){
-            window.setSize(sf::Vector2u(wWidth,wHeight));
+            //window.setSize(sf::Vector2u(wWidth,wHeight));
             window.setView(window.getDefaultView());
             janela = menu(&window);
         }

@@ -1,13 +1,19 @@
 #include "game.h"
+#include "player.h"
+///map size variables? @todo
 
-
-///map size variables?
 int width = 38; int height = 20;
 
 
+Player player1;
+
+bool isGround = false;
+
+
 ///Textures
-sf::Texture tPlayer;
+
 sf::Texture t103, t152, t68, t44, t40, t57, t45, t154, t32, t20;
+
 
 JANELAS game(sf::RenderWindow* window){
 
@@ -19,7 +25,8 @@ JANELAS game(sf::RenderWindow* window){
 
 
     ///Load Textures
-    //Tiles textures
+
+    {//Tiles textures
     if(!t152.loadFromFile("src\\Tiles\\grassCenter.png")){
         std::cout << "ERROR";
     }
@@ -50,10 +57,6 @@ JANELAS game(sf::RenderWindow* window){
     if(!t103.loadFromFile("src\\Tiles\\grassMid.png")){
         std::cout << "ERROR";
     }
-
-    //player texture
-    if(!tPlayer.loadFromFile("src\\NPC2.png")){
-        std::cout << "ERROR";
     }
 
     ///This creates a array to hold the coordinates of the level, together with the tile IDs
@@ -79,16 +82,37 @@ JANELAS game(sf::RenderWindow* window){
         }
 
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)){
-            view.move(sf::Vector2f(3,0));
+            if(player1.getPosition().x > 400)
+                view.setCenter(player1.getPosition().x + 100, view.getCenter().y);
+            player1.move(RIGHT);
         }
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)){
-            view.move(sf::Vector2f(-3,0));
+            if(player1.getPosition().x > 400)
+                view.setCenter(player1.getPosition().x + 100, view.getCenter().y);
+            player1.move(LEFT);
+        }
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)){
+            player1.move(DOWN);
+        }
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)){
+            player1.move(UP);
+        }
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && isGround){
+            player1.gravity(false, true);
         }
 
+
+        //Thing that always happens
+        isGround = false;
+        ///
         window->setView(view);
         window->clear(sf::Color::White);
 
-        printMap(coord, window);
+        drawMap(coord, window);
+
+        player1.gravity(isGround, false);
+        player1.draw(window);
+
 
         window->display();
 
@@ -97,8 +121,9 @@ JANELAS game(sf::RenderWindow* window){
     return MENU;
 }
 
-void printMap(std::string** _input, sf::RenderWindow* window){
+void drawMap(std::string** _input, sf::RenderWindow* window){
 
+    sf::RectangleShape rect;
     //Iterate by each coordinate checking the code in each cell
     //code goes from 1 to 156 - defined by sprite sheet
     for(int x = 0; x<width; x++){
@@ -107,35 +132,37 @@ void printMap(std::string** _input, sf::RenderWindow* window){
                 drawSprite(sf::Vector2f(x,y), window);
             }
             else if(*(*(_input + x) + y) == "103"){
-                drawSprite(&t103, sf::Vector2f(x,y), window);
+                drawSprite(&t103, sf::Vector2f(x,y), window, &rect);
+                if(player1.collision(&rect) == DOWN)
+                    isGround = true;
             }
             else if(*(*(_input + x) + y) == "152"){
-                drawSprite(&t152, sf::Vector2f(x,y), window);
+                drawSprite(&t152, sf::Vector2f(x,y), window, &rect);
             }
             else if(*(*(_input + x) + y) == "68"){
-                drawSprite(&t68, sf::Vector2f(x,y), window);
+                drawSprite(&t68, sf::Vector2f(x,y), window, &rect);
             }
             else if(*(*(_input + x) + y) == "44"){
-                drawSprite(&t44, sf::Vector2f(x,y), window);
+                drawSprite(&t44, sf::Vector2f(x,y), window, &rect);
             }
 
             else if(*(*(_input + x) + y) == "40"){
-                drawSprite(&t40, sf::Vector2f(x,y), window);
+                drawSprite(&t40, sf::Vector2f(x,y), window, &rect);
             }
             else if(*(*(_input + x) + y) == "57"){
-                drawSprite(&t57, sf::Vector2f(x,y), window);
+                drawSprite(&t57, sf::Vector2f(x,y), window, &rect);
             }
             else if(*(*(_input + x) + y) == "45"){
-                drawSprite(&t45, sf::Vector2f(x,y), window);
+                drawSprite(&t45, sf::Vector2f(x,y), window, &rect);
             }
             else if(*(*(_input + x) + y) == "154"){
-                drawSprite(&t154, sf::Vector2f(x,y), window);
+                drawSprite(&t154, sf::Vector2f(x,y), window, &rect);
             }
             else if(*(*(_input + x) + y) == "32"){
-                drawSprite(&t32, sf::Vector2f(x,y), window);
+                drawSprite(&t32, sf::Vector2f(x,y), window, &rect);
             }
             else if(*(*(_input + x) + y) == "20"){
-                drawSprite(&t20, sf::Vector2f(x,y), window);
+                drawSprite(&t20, sf::Vector2f(x,y), window, &rect);
             }
         }
     }

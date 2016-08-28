@@ -383,7 +383,7 @@
 	<string>
 	<vector>
 
-1471107245 source:c:\users\gustavo alves\desktop\c++\projetos\platamp1\main.cpp
+1472334497 source:c:\users\gustavo alves\desktop\c++\projetos\platamp1\main.cpp
 	"Buttons.h"
 	"menu.h"
 	"game.h"
@@ -394,10 +394,10 @@
 1470291945 c:\users\gustavo alves\desktop\c++\projetos\platamp1\menu.h
 	"Buttons.h"
 
-1471106187 source:c:\users\gustavo alves\desktop\c++\projetos\platamp1\mapping.cpp
+1471675427 source:c:\users\gustavo alves\desktop\c++\projetos\platamp1\mapping.cpp
 	"mapping.h"
 
-1471105652 c:\users\gustavo alves\desktop\c++\projetos\platamp1\mapping.h
+1471675375 c:\users\gustavo alves\desktop\c++\projetos\platamp1\mapping.h
 	<fstream>
 	<string>
 	<sstream>
@@ -408,13 +408,21 @@
 1470440921 source:c:\users\gustavo alves\desktop\c++\projetos\platamp1\menu.cpp
 	"menu.h"
 
-1471115995 source:c:\users\gustavo alves\desktop\c++\projetos\platamp1\game.cpp
+1472334567 source:c:\users\gustavo alves\desktop\c++\projetos\platamp1\game.cpp
 	"game.h"
+	"player.h"
 
-1471062856 c:\users\gustavo alves\desktop\c++\projetos\platamp1\game.h
+1471673860 c:\users\gustavo alves\desktop\c++\projetos\platamp1\game.h
 	"Buttons.h"
 	"mapping.h"
 	"string"
 	<iostream>
 	<SFML/Graphics.hpp>
+
+1472334410 c:\users\gustavo alves\desktop\c++\projetos\platamp1\player.h
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1472334512 source:c:\users\gustavo alves\desktop\c++\projetos\platamp1\player.cpp
+	"player.h"
 
