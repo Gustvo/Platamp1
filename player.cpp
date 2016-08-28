@@ -4,6 +4,9 @@ Player::Player(){
     _moveSpeed = 3;
     _animationCounter = 0;
     int mSize = 60;
+    _velocity = sf::Vector2f(0,0);
+    _maxSpeed = 5;
+    _acceleration = 0.2;
     //int spriteSize = 60;
 
     _coord = sf::Vector2f(50,770-mSize);
@@ -79,14 +82,35 @@ DIRECTION Player::collision(sf::RectangleShape* object){
        _rect.getPosition().y >= object->getPosition().y + object->getSize().y + 2){
             return RIGHT;
        }else if
-       (_rect.getPosition().y + getSize().y >= object->getPosition().y -2 &&
-        _rect.getPosition().y + getSize().y <= object->getPosition().y +2 &&
-        _rect.getPosition().x + getSize().x <= object->getPosition().x &&
-        _rect.getPosition().x >= object->getPosition().x + object->getSize().x){
+       (_rect.getPosition().y + getSize().y >= object->getPosition().y &&
+        _rect.getPosition().y + getSize().y <= object->getPosition().y +6 &&
+        _rect.getPosition().x + getSize().x >= object->getPosition().x &&
+        _rect.getPosition().x <= object->getPosition().x + object->getSize().x){
             return DOWN;
         }
         else{
             return NO;
         }
+
+}
+
+void Player::gravity(bool isGround, bool isJump) {
+    static float V = 0;
+    static float v = 0;
+    const float a = 0.4;
+
+    if(isJump){
+        v = -12;
+    }
+
+    V = v + a;
+
+    if(isGround)
+        V = 0;
+
+    v = V;
+
+    _rect.move(sf::Vector2f(0, V));
+    _coord = _rect.getPosition();
 
 }

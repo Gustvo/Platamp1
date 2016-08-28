@@ -21,7 +21,7 @@ int main(){
 
     JANELAS janela = MENU;
     sf::RenderWindow window(sf::VideoMode(wWidth,wHeight), wName, sf::Style::Close);
-    window.setFramerateLimit(60);
+    window.setFramerateLimit(120);
 
     while(window.isOpen()){
         sf::Event event;

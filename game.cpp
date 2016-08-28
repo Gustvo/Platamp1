@@ -7,6 +7,8 @@ int width = 38; int height = 20;
 
 Player player1;
 
+bool isGround = false;
+
 
 ///Textures
 
@@ -95,10 +97,20 @@ JANELAS game(sf::RenderWindow* window){
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::W)){
             player1.move(UP);
         }
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && isGround){
+            player1.gravity(false, true);
+        }
+
+
+        //Thing that always happens
+        isGround = false;
+        ///
         window->setView(view);
         window->clear(sf::Color::White);
 
         drawMap(coord, window);
+
+        player1.gravity(isGround, false);
         player1.draw(window);
 
 
@@ -121,6 +133,8 @@ void drawMap(std::string** _input, sf::RenderWindow* window){
             }
             else if(*(*(_input + x) + y) == "103"){
                 drawSprite(&t103, sf::Vector2f(x,y), window, &rect);
+                if(player1.collision(&rect) == DOWN)
+                    isGround = true;
             }
             else if(*(*(_input + x) + y) == "152"){
                 drawSprite(&t152, sf::Vector2f(x,y), window, &rect);

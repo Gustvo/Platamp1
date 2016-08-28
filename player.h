@@ -11,6 +11,9 @@ class Player {
     sf::RectangleShape _rect;
     sf::Texture _tPlayer;
     int _moveSpeed;
+    int _acceleration;
+    int _maxSpeed;
+    sf::Vector2f _velocity;
     int _animationCounter;
     DIRECTION _direction;
     //sf::Sprite _sprite;
@@ -22,6 +25,8 @@ public:
     void draw(sf::RenderWindow*);
     sf::Vector2f getPosition();
     sf::Vector2f getSize();
+    void gravity(bool, bool);
+    void jump();
 
 };
 

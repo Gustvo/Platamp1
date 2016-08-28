@@ -383,7 +383,7 @@
 	<string>
 	<vector>
 
-1471225591 source:c:\users\gustavo alves\desktop\c++\projetos\platamp1\main.cpp
+1472334497 source:c:\users\gustavo alves\desktop\c++\projetos\platamp1\main.cpp
 	"Buttons.h"
 	"menu.h"
 	"game.h"
@@ -408,7 +408,7 @@
 1470440921 source:c:\users\gustavo alves\desktop\c++\projetos\platamp1\menu.cpp
 	"menu.h"
 
-1471680318 source:c:\users\gustavo alves\desktop\c++\projetos\platamp1\game.cpp
+1472334567 source:c:\users\gustavo alves\desktop\c++\projetos\platamp1\game.cpp
 	"game.h"
 	"player.h"
 
@@ -419,10 +419,10 @@
 	<iostream>
 	<SFML/Graphics.hpp>
 
-1471680209 c:\users\gustavo alves\desktop\c++\projetos\platamp1\player.h
+1472334410 c:\users\gustavo alves\desktop\c++\projetos\platamp1\player.h
 	<SFML/Graphics.hpp>
 	<iostream>
 
-1471680313 source:c:\users\gustavo alves\desktop\c++\projetos\platamp1\player.cpp
+1472334512 source:c:\users\gustavo alves\desktop\c++\projetos\platamp1\player.cpp
 	"player.h"
 
